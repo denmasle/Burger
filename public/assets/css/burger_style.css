@@ -1,0 +1,21 @@
+.jumbotron {
+    background-image: url("../images/burger.png");
+    background-position: center;
+    background-size: 100%;
+}
+
+.jumbotron h1 {
+    color: white;
+    font-weight: bold;
+    font-style: italic;
+}
+
+body {
+    background-color: lightgrey;
+}
+
+.head {
+    color: white;
+    font-style: italic;
+    font-weight: bold;
+}

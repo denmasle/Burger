@@ -1,0 +1,47 @@
+<div class="jumbotron">
+  <div class="container">
+    <form method="POST" action="/">
+      <div class="form-group">
+        <h1>Eat Da Burger</h1>
+        <label for="order" class="head">Enter your BURGER here:</label>
+        <input type="text" class="form" name="name">
+        <button type="submit" class="btn btn-success" id="submit">ORDER!</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6" id="done">
+      <div class="card card-header text-center text-white">
+        <h3>AWAITING DESTRUCTION:</h3>
+      </div>
+      {{#each burgers}}{{#unless this.destroyed}}
+      <div class="card card-body">
+        <div class="row">
+          <div class="col-md-9 col-sm-12">
+            {{this.id}} - {{this.name}}
+          </div>
+          <div class="col-md-3 col-sm-12">
+            <form action="/{{id}}?_method=PUT" method="POST">
+              <button type="submit" class="btn btn-danger">DESTROY!</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      {{/unless}}{{/each}}
+    </div>
+
+    <div class="col-md-6" id="gone">
+      <div class="card card-header text-center text-white">
+        <h3>DESTROYED ALREADY!</h3>
+      </div>
+      {{#each burgers}}{{#if this.destroyed}}
+      <div class="card card-body">
+        {{this.id}} - {{this.name}}
+      </div>
+      {{/if}}{{/each}}
+    </div>
+  </div>
+</div>

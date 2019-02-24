@@ -1,0 +1,1 @@
+INSERT INTO burgers (name, destroyed) VALUES ("DOUBLE DOUBLE Animal Style!", true);
